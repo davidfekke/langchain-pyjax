@@ -9,13 +9,19 @@ I recommend setting a virtual environment for running this project.
 You can activate a virtual environment on a Mac or Linux with the following commands:
 
 ```sh
-python -m venv .venv
-source .venv/bin/activate
+$ python -m venv .venv
+$ source .venv/bin/activate
 ```
 
-Once the environment is activated, you can install the following langchain packages:
+Once the environment is activated, you can install the following LangChain packages:
 
 ```sh
-pip install langchain_core
-pip install langchain_openai
+$ pip install langchain_core
+$ pip install langchain_openai
+```
+
+You can also install the dependencies 
+
+```sh
+$ pip install --upgrade pip
 ```

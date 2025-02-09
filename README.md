@@ -20,8 +20,16 @@ $ pip install langchain_core
 $ pip install langchain_openai
 ```
 
-You can also install the dependencies 
+You can also install the dependencies from this repo by running the following command:
 
 ```sh
-$ pip install --upgrade pip
+$ pip install -r requirements.txt
+```
+
+# Running the ChatBot
+
+To run the chatbot, run the following command:
+
+```sh
+streamlit run pyjaxchatbot.py
 ```

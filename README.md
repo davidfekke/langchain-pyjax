@@ -26,6 +26,10 @@ You can also install the dependencies from this repo by running the following co
 $ pip install -r requirements.txt
 ```
 
+# OpenAI example require API Key
+
+All of the OpenAI example require the OpenAI API Key. You can obtain an OpenAI API Key by going to their [platform portal](https://platform.openai.com/api-keys).
+
 # Running the ChatBot
 
 To run the chatbot, run the following command:

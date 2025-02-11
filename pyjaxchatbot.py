@@ -23,9 +23,14 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=openai_api_key)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    # previous model was gpt-3.5-turbo
-    response = client.chat.completions.create(model=model, messages=st.session_state.messages)
-    msg = response.choices[0].message.content
-    st.session_state.messages.append({"role": "assistant", "content": msg})
-    st.chat_message("assistant").write(msg)
+
+    response = client.chat.completions.create(model=model, messages=st.session_state.messages, stream=True)
     
+    full_response = ""
+    message_placeholder = st.empty()
+    for chunk in response:
+        if chunk.choices[0].delta.content is not None:
+            full_response += chunk.choices[0].delta.content
+            message_placeholder.write(full_response + "▌")
+    message_placeholder.write(full_response)
+    st.session_state.messages.append({"role": "assistant", "content": full_response})

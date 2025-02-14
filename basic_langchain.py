@@ -7,7 +7,7 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY') # getpass.getpass()
 model = ChatOpenAI(model="gpt-4o-mini")
 
 messages = [
-    SystemMessage(content="Translate the following from English into Espanol"),
+    SystemMessage(content="Translate the following from English into Russian"),
     HumanMessage(content="hi!"),
 ]
 
